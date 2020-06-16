@@ -33,7 +33,8 @@ d3.csv(
         return d.price;
       }) // I need to give the vector of value
       .domain(x.domain()) // then the domain of the graphic
-      .thresholds(x.ticks(70)); // then the numbers of bins
+      .thresholds(x.ticks(70));
+    // then the numbers of bins
 
     // And apply this function to data to get the bins
     var bins = histogram(data);
@@ -95,4 +96,56 @@ d3.select(".blue-button").on("click", function () {
   let newCol = colorize();
   console.log(newCol);
   update(newCol);
+});
+
+let isNight = false;
+
+function switchModes() {
+  isNight = !isNight;
+
+  d3.select(".navbar").attr("class", () => {
+    if (!isNight) {
+      return "navbar navbar-expand-lg bg-light navbar-light";
+    } else {
+      return "navbar navbar-expand-lg bg-dark navbar-dark";
+    }
+  });
+
+  d3.select(".d-flex")
+    .style("background", () => {
+      if (!isNight) {
+        return "white";
+      } else {
+        return "#343a49 ";
+      }
+    })
+    .style("color", () => {
+      if (!isNight) {
+        return "#343a40";
+      } else {
+        return " white";
+      }
+    });
+  var svg = d3.select("#my_dataviz");
+  svg.selectAll(".domain").style("stroke", () => {
+    if (!isNight) {
+      return "#343a40";
+    } else {
+      return " white";
+    }
+  });
+  var svg2 = d3.select("#my_dataviz");
+  var domains = svg2.selectAll(".tick");
+  domains.selectAll("text").style("fill", () => {
+    if (!isNight) {
+      return "#343a40";
+    } else {
+      return " white";
+    }
+  });
+}
+
+d3.select(".custom-control-input").on("click", () => {
+  console.log(isNight);
+  switchModes();
 });

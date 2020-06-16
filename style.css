@@ -11,7 +11,7 @@ main > .container {
 }
 
 .navbar {
-  background-color: #282e32 !important;
+  /* background-color: #282e32 !important; */
   height: 4rem !important;
 }
 
