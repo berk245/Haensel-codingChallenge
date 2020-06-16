@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -15,8 +14,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="main.css" />
-
-    <title>Hello, world!</title>
+    <title>Haensel Recruitment Challenge</title>
   </head>
   <body class="d-flex flex-column h-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -43,6 +41,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -62,9 +63,6 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input
@@ -73,20 +71,24 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">
             Search
           </button>
         </form>
       </div>
     </nav>
-
-    <footer class="footer mt-auto py-3">
-      <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+    <main>
+      <!-- The graph is here -->
+      <div id="my_dataviz"></div>
+      <div class="textAndButton">
+        <p class="lorem">
+          Lorem ipsum dolorem
+        </p>
+        <button class="btn btn-primary blue-button">Primary</button>
       </div>
-    </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    </main>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="chart.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
