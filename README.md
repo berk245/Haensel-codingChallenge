@@ -1,4 +1,4 @@
-My Solution to Recruitment Challenge By Haensel AMS
+Recruitment Challenge By Haensel AMS
 
 The submission can be viewed at:
 https://berk245.github.io/Haensel-codingChallenge/
