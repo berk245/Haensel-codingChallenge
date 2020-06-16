@@ -67,3 +67,32 @@ d3.csv(
       .style("fill", "#69b3a2");
   }
 );
+
+function colorize() {
+  function randomColorGenerator() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  random_color = randomColorGenerator();
+  return random_color;
+}
+function update(color) {
+  var svg = d3.select("#my_dataviz");
+  svg.selectAll("rect").style("fill", () => {
+    return color;
+  });
+  d3.select(".blue-button").style("background", () => {
+    return color;
+  });
+}
+
+d3.select(".blue-button").on("click", function () {
+  console.log("click");
+  let newCol = colorize();
+  console.log(newCol);
+  update(newCol);
+});
