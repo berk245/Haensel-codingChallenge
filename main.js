@@ -143,6 +143,13 @@ function switchModes() {
       return " white";
     }
   });
+  domains.selectAll("line").style("stroke", () => {
+    if (!isNight) {
+      return "#343a40";
+    } else {
+      return " white";
+    }
+  });
 }
 
 d3.select(".custom-control-input").on("click", () => {
