@@ -104,7 +104,7 @@ function switchModes() {
   isNight = !isNight;
 
   d3.select(".navbar").attr("class", () => {
-    if (!isNight) {
+    if (isNight) {
       return "navbar navbar-expand-lg bg-light navbar-light";
     } else {
       return "navbar navbar-expand-lg bg-dark navbar-dark";
