@@ -92,9 +92,7 @@ function update(color) {
 }
 
 d3.select(".blue-button").on("click", function () {
-  console.log("click");
   let newCol = colorize();
-  console.log(newCol);
   update(newCol);
 });
 
@@ -153,6 +151,16 @@ function switchModes() {
 }
 
 d3.select(".custom-control-input").on("click", () => {
-  console.log(isNight);
   switchModes();
+});
+
+d3.select(".search-button").on("click", () => {
+  var input = document.getElementsByClassName("form-control");
+  input = input[0].value;
+  //error in the case of no input
+  if (input == "") {
+    window.alert("Please Type-in a Key Word for Searching");
+    return;
+  }
+  window.open("https://www.ecosia.org/search?q=" + input);
 });
